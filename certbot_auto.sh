@@ -82,6 +82,13 @@ function renew_certificate {
     fi
 }
 
+# Function to setup cron job for automatic renewal
+function setup_cron_job {
+    # Add a cron job to run certbot renew on the 1st of every month
+    (crontab -l 2>/dev/null; echo "0 0 1 * * certbot renew --quiet --nginx") | crontab -
+    echo "Cron job for certificate renewal set up successfully."
+}
+
 # Main script
 
 # Install required packages
@@ -93,3 +100,5 @@ read -p "Enter your domain name: " DOMAIN_NAME
 # Issue or renew certificate
 issue_or_renew_certificate "$DOMAIN_NAME"
 
+# Setup cron job for automatic renewal
+setup_cron_job
