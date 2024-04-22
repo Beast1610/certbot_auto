@@ -2,15 +2,15 @@
 
 ## Instructions for use:
 
-# Clone the repository:
+### Clone the repository:
 git clone https://github.com/Beast1610/certbot_auto.git
 
-# Navigate to the directory:
+### Navigate to the directory:
 cd certbot_auto
 
-# Provide permission for execution
+### Provide permission for execution
 chmod +x certbot_auto.sh
 
-# Run the script and follow the prompts:
+### Run the script and follow the prompts:
 ./script.sh
 
